@@ -1,25 +1,49 @@
-import logo from './logo.svg';
-import './App.css';
+import { Admin, Resource } from 'react-admin'
+import {
+  FirebaseDataProvider,
+  FirebaseAuthProvider,
+} from 'react-admin-firebase'
+import {
+  ComputerPriceList,
+  ComputerPriceEdit,
+  ComputerPriceCreate,
+} from './ComputerPrcie'
+import { LaptopCreate, LaptopEdit, LaptopList } from './LaptopPrices'
+import {
+  ProductCreate,
+  ProductEdit,
+  ProductList,
+  ProductShow,
+} from './Products'
+import { config } from './utils/firebase'
 
-function App() {
+const App = () => {
+  const options = {}
+  const dataProvider = FirebaseDataProvider(config, options)
+  const authProvider = FirebaseAuthProvider(config)
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <Admin authProvider={authProvider} dataProvider={dataProvider}>
+      <Resource
+        name="Products"
+        list={ProductList}
+        // show={ProductShow}
+        create={ProductCreate}
+        edit={ProductEdit}
+      />
+      <Resource
+        name="computerPrices"
+        list={ComputerPriceList}
+        edit={ComputerPriceEdit}
+        create={ComputerPriceCreate}
+      />
+      <Resource
+        name="laptopPrices"
+        list={LaptopList}
+        edit={LaptopEdit}
+        create={LaptopCreate}
+      />
+    </Admin>
+  )
 }
 
-export default App;
+export default App
