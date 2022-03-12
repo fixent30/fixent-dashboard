@@ -4,6 +4,8 @@ import {
   DeleteButton,
   Edit,
   EditButton,
+  ImageField,
+  ImageInput,
   List,
   SimpleForm,
   TextField,
@@ -18,6 +20,7 @@ export const ComputerPriceList = (props) => (
     <Datagrid>
       <TextField source="price" />
       <TextField source="speces" />
+      <ImageField source="pictures.src" title="pictures.title" />
       <MyEditButton />
       <MyDeleteButton />
     </Datagrid>
@@ -38,6 +41,9 @@ export const ComputerPriceCreate = (props) => (
     <SimpleForm>
       <TextInput source="price" />
       <TextInput source="speces" />
+      <ImageInput source="pictures" label="Related pictures" accept="image/*">
+        <ImageField source="src" title="title" />
+      </ImageInput>
     </SimpleForm>
   </Create>
 )

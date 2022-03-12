@@ -8,6 +8,8 @@ import {
   EditButton,
   Edit,
   DeleteButton,
+  ImageInput,
+  ImageField,
 } from 'react-admin'
 
 const MyEditButton = (props) => <EditButton {...props} />
@@ -19,6 +21,7 @@ export const LaptopList = (props) => (
       <TextField source="name" />
       <TextField source="price" />
       <TextField source="speces" />
+      <ImageField source="pictures.src" title="pictures.title" />
       <MyEditButton />
       <MyDeleteButton />
     </Datagrid>
@@ -31,6 +34,9 @@ export const LaptopCreate = (props) => (
       <TextInput source="name" />
       <TextInput source="price" />
       <TextInput source="speces" />
+      <ImageInput source="pictures" label="Related pictures" accept="image/*">
+        <ImageField source="src" title="title" />
+      </ImageInput>
     </SimpleForm>
   </Create>
 )
