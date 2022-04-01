@@ -47,6 +47,9 @@ export const LaptopEdit = (props) => (
       <TextInput source="name" />
       <TextInput source="price" />
       <TextInput source="speces" />
+      <ImageInput source="pictures" label="Related pictures" accept="image/*">
+        <ImageField source="src" title="title" />
+      </ImageInput>
     </SimpleForm>
   </Edit>
 )
