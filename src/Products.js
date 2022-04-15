@@ -13,42 +13,46 @@ import {
   SimpleShowLayout,
   TextField,
   TextInput,
-} from 'react-admin'
+} from "react-admin";
 
-const MyEditButton = (props) => <EditButton {...props} />
-const MyDeleteButton = (props) => <DeleteButton {...props} />
+const MyEditButton = (props) => <EditButton {...props} />;
+const MyDeleteButton = (props) => <DeleteButton {...props} />;
 
 export const ProductList = (props) => (
   <List {...props}>
     <Datagrid>
       <TextField source="name" />
-      <ImageField source="img" />
+      <ImageField source="pictures.src" title="pictures.title" />
       <TextField source="price" />
       <TextField source="warrenty" />
       <MyEditButton />
       <MyDeleteButton />
     </Datagrid>
   </List>
-)
+);
 
 export const ProductCreate = (props) => (
   <Create {...props}>
     <SimpleForm>
       <TextInput source="name" />
-      <ImageInput source="img" />
+      <ImageInput source="pictures" label="Related pictures" accept="image/*">
+        <ImageField source="src" title="title" />
+      </ImageInput>
       <TextInput source="price" />
       <TextInput source="warrenty" />
     </SimpleForm>
   </Create>
-)
+);
 
 export const ProductEdit = (props) => (
   <Edit {...props}>
     <SimpleForm>
       <TextInput source="name" />
-      <TextInput source="img" />
+      <ImageInput source="pictures" label="Related pictures" accept="image/*">
+        <ImageField source="src" title="title" />
+      </ImageInput>
       <TextInput source="price" />
       <TextInput source="warrenty" />
     </SimpleForm>
   </Edit>
-)
+);
