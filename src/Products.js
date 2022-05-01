@@ -7,11 +7,10 @@ import {
   ImageField,
   ImageInput,
   List,
-  ReferenceInput,
-  Show,
   SimpleForm,
-  SimpleShowLayout,
   TextField,
+  SelectInput,
+  SelectField,
   TextInput,
 } from "react-admin";
 
@@ -25,6 +24,47 @@ export const ProductList = (props) => (
       <ImageField source="pictures.src" title="pictures.title" />
       <TextField source="price" />
       <TextField source="warrenty" />
+      <SelectField
+        source="tag"
+        choices={[
+          {
+            id: "Ram",
+            name: "Ram",
+          },
+          {
+            id: "SSD",
+            name: "SSD",
+          },
+          {
+            id: "Mouse",
+            name: "Mouse",
+          },
+          {
+            id: "Monitor",
+            name: "Monitor",
+          },
+          {
+            id: "MotherBoard",
+            name: "MotherBorard",
+          },
+          {
+            id: "Cabinet",
+            name: "Cabinet",
+          },
+          {
+            id: "Processor",
+            name: "Processor",
+          },
+          {
+            id: "Smps",
+            name: "smps",
+          },
+          {
+            id: "Used",
+            name: "Used",
+          },
+        ]}
+      />
       <MyEditButton />
       <MyDeleteButton />
     </Datagrid>
@@ -40,6 +80,47 @@ export const ProductCreate = (props) => (
       </ImageInput>
       <TextInput source="price" />
       <TextInput source="warrenty" />
+      <SelectInput
+        source="tag"
+        choices={[
+          {
+            id: "Ram",
+            name: "Ram",
+          },
+          {
+            id: "SSD",
+            name: "SSD",
+          },
+          {
+            id: "Mouse",
+            name: "Mouse",
+          },
+          {
+            id: "Monitor",
+            name: "Monitor",
+          },
+          {
+            id: "MotherBoard",
+            name: "MotherBorard",
+          },
+          {
+            id: "Cabinet",
+            name: "Cabinet",
+          },
+          {
+            id: "Processor",
+            name: "Processor",
+          },
+          {
+            id: "Smps",
+            name: "smps",
+          },
+          {
+            id: "Used",
+            name: "Used",
+          },
+        ]}
+      />
     </SimpleForm>
   </Create>
 );
@@ -53,6 +134,47 @@ export const ProductEdit = (props) => (
       </ImageInput>
       <TextInput source="price" />
       <TextInput source="warrenty" />
+      <SelectInput
+        source="tag"
+        choices={[
+          {
+            id: "Ram",
+            name: "Ram",
+          },
+          {
+            id: "SSD",
+            name: "SSD",
+          },
+          {
+            id: "Mouse",
+            name: "Mouse",
+          },
+          {
+            id: "Monitor",
+            name: "Monitor",
+          },
+          {
+            id: "MotherBoard",
+            name: "MotherBorard",
+          },
+          {
+            id: "Cabinet",
+            name: "Cabinet",
+          },
+          {
+            id: "Processor",
+            name: "Processor",
+          },
+          {
+            id: "Smps",
+            name: "smps",
+          },
+          {
+            id: "Used",
+            name: "Used",
+          },
+        ]}
+      />
     </SimpleForm>
   </Edit>
 );

@@ -8,12 +8,13 @@ import {
   EditButton,
   Edit,
   DeleteButton,
+  SelectField,
   ImageInput,
   ImageField,
-} from 'react-admin'
+} from "react-admin";
 
-const MyEditButton = (props) => <EditButton {...props} />
-const MyDeleteButton = (props) => <DeleteButton {...props} />
+const MyEditButton = (props) => <EditButton {...props} />;
+const MyDeleteButton = (props) => <DeleteButton {...props} />;
 
 export const LaptopList = (props) => (
   <List {...props}>
@@ -26,7 +27,7 @@ export const LaptopList = (props) => (
       <MyDeleteButton />
     </Datagrid>
   </List>
-)
+);
 
 export const LaptopCreate = (props) => (
   <Create {...props}>
@@ -39,7 +40,7 @@ export const LaptopCreate = (props) => (
       </ImageInput>
     </SimpleForm>
   </Create>
-)
+);
 
 export const LaptopEdit = (props) => (
   <Edit {...props}>
@@ -52,4 +53,4 @@ export const LaptopEdit = (props) => (
       </ImageInput>
     </SimpleForm>
   </Edit>
-)
+);
