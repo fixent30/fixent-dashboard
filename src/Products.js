@@ -12,6 +12,8 @@ import {
   SelectInput,
   SelectField,
   TextInput,
+  NumberInput,
+  NumberField,
 } from "react-admin";
 
 const MyEditButton = (props) => <EditButton {...props} />;
@@ -23,6 +25,7 @@ export const ProductList = (props) => (
       <TextField source="name" />
       <ImageField source="pictures.src" title="pictures.title" />
       <TextField source="price" />
+      <NumberField source="discount" />
       <TextField source="warrenty" />
       <SelectField
         source="tag"
@@ -79,6 +82,7 @@ export const ProductCreate = (props) => (
         <ImageField source="src" title="title" />
       </ImageInput>
       <TextInput source="price" />
+      <NumberInput source="discount" />
       <TextInput source="warrenty" />
       <SelectInput
         source="tag"
@@ -133,6 +137,7 @@ export const ProductEdit = (props) => (
         <ImageField source="src" title="title" />
       </ImageInput>
       <TextInput source="price" />
+      <NumberInput source="discount" />
       <TextInput source="warrenty" />
       <SelectInput
         source="tag"
